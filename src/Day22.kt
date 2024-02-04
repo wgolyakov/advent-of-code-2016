@@ -15,7 +15,7 @@ fun main() {
 	fun viable(a: Node, b: Node) = a.used != 0 && a.used <= b.avail
 
 	fun getNeighbors(node: Node, grid: List<MutableList<Node>>): List<Node> {
-		return listOf(- 1 to 0, 1 to 0, 0 to -1, 0 to 1)
+		return listOf(-1 to 0, 1 to 0, 0 to -1, 0 to 1)
 			.map { node.x + it.first to node.y + it.second }
 			.filter { it.first >= 0 && it.second >= 0 && it.first < grid[0].size && it.second < grid.size }
 			.map { grid[it.second][it.first] }
